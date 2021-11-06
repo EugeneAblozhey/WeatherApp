@@ -15,18 +15,9 @@ const getResourse = async (url) => {
     return res.json();
 }
 
-const getResourse1 = async (url) => {
-    const res = await fetch(url);
-
-    if(!res.ok){
-        throw new Error(`ERROR!!!!!!! ${res.status}`)
-    }
-
-    return res.json();
-}
 
 const getThreeHoursWeatherInfo = async (place) => {
-    const res = await getResourse1(`${WEATHER_3_HOURS_DATA}?q=${place}&appid=${APP_ID}`); //${WEATHER_3_HOURS_DATA}?q=${place}&appid=${APP_ID}
+    const res = await getResourse(`${WEATHER_3_HOURS_DATA}?q=${place}&appid=${APP_ID}`);
     return res;
 }
 
